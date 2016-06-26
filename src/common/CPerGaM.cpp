@@ -1,8 +1,6 @@
 #include "CPerGaM.h"
 
 using namespace std;
-static bool debug = true; 
-
 
 CPerGaM::CPerGaM(const char* name)
 {

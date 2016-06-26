@@ -1,8 +1,8 @@
 ## Learning Temporal Context for Activity Recognition 
 
 This repository contains algorithms and data that we used for our work on long-term temporal models for activity recognition, which we will present at the ECAI 2016 conference [[1](#references)].
-With these codes and data, you should be able to reproduce experiments performed on the two datasets described in Section 5 of [1](#references)].
-The software is related to the Frequency Map Enhancement (FreMEn)[2](#references) method and the data are part of the datasets for long-term mobile robot autonomy [DALTEMRA](https://lcas.lincoln.ac.uk/owncloud/shared/datasets) provided by the Lincoln Centre for Autonomous Systems [LCAS](http://robots.lincoln.ac.uk)
+With these codes and data, you should be able to reproduce experiments performed on the two datasets described in Section 5 of [[1](#references)].
+The software is related to the Frequency Map Enhancement (FreMEn)[[2](#references)] method and the data are part of the datasets for long-term mobile robot autonomy ([DaLTeMoR](https://lcas.lincoln.ac.uk/owncloud/shared/datasets)) provided by the Lincoln Centre for Autonomous Systems ([LCAS](http://robots.lincoln.ac.uk)).
 
 ### How to compile and run 
 
@@ -11,25 +11,26 @@ Now, to quickly test the method, call e.g.
 
 `../bin/fremen ../data/aruba/ FN 5 15 0.2|grep Precision`
 
-The arguments in this example are as follows:
-
-1.<b>../data/aruba</b> location of the dataset,
-1.<b>FN</b> selection of the spatio-temporal model. First letter determines temporal model (FreMEn) in this case and `N` means that `None` spatial context is used. See the code <i> main/fremen.cpp</i> for details.
-1.<b>5</b> order of the model - 5 periodics in the aforementioned example,
-1.<b>15</b> is the number of days used in the experiment,  
-1.<b>0.2</b> is the filename of the confusion matrix or the value of elements at the matrix diagonal, i.e. we used 0.2 for `weak` and 0.8 for `strong` in the experiments described in [1](reference).
-
 You should get 15 lines that show how the classification performed each day.
 Each value contains the day, number of correct and incorrect classifications, classification precision etc.
+
+The arguments in this example are as follows:
+
+1. <b>../data/aruba</b> location of the dataset,
+1. <b>FN</b> selection of the spatio-temporal model. First letter determines temporal model (FreMEn) in this case and <b>N</b> means that <i>None</i> spatial context is used. See the code <i> main/fremen.cpp</i> for details.
+1. <b>5</b> order of the model - 5 periodics in the aforementioned example,
+1. <b>15</b> is the number of days used in the experiment,  
+1. <b>0.2</b> is the filename of the confusion matrix or the value of elements at the matrix diagonal, i.e. we used 0.2 for <i>weak</i> and 0.8 for <i>strong</i> in the experiments described in [1](reference).
+
 
 ### Datasets
 
 Datasets are located in the `data` folder. Each dataset consists of 5 files 
 
-1.<b>activity.min</b> ID of an activity per minute, (e.g. 1440 lines of that file represent one day).
-1.<b>activity.names</b> name of an activity - provides info which ID is which activity. 
-1.<b>locations.min</b> id of a room, where the person was, (again 1440 lines of that file represent one day).
-1.<b>locations.names</b> room type - provides room types of the rooms in <b>locations.min</b>. 
+1. <b>activity.min</b> ID of an activity per minute, (e.g. 1440 lines of that file represent one day).
+1. <b>activity.names</b> name of an activity - provides info which ID is which activity. 
+1. <b>locations.min</b> id of a room, where the person was, (again 1440 lines of that file represent one day).
+1. <b>locations.names</b> room type - provides room types of the rooms in <b>locations.min</b>. 
 
 ### Benchmark 
 
@@ -42,13 +43,13 @@ Then, running
 
 1. ``./process_dataset.sh aruba``, processes the <i>aruba</i> dataset, see Section 5 of [1](#references).
 1. ``./summarize_results.sh aruba``, performs statistical tests over the <i>aruba</i> dataset results calculated in the previous step and generates <i>aruba.pdf</i>, which provides comparison of the individual temporal models.
-1. ``./process_dataset.sh witham`` and ``summarize_results.sh witham`` does the same for the <i>witham</i> dataset.
+1. ``./process_dataset.sh witham`` and ``./summarize_results.sh witham`` does the same for the <i>witham</i> dataset.
 1. ``./draw_results.sh``, processes the results of both <i>aruba</i> and <i>witham</i> and generates the figures (in <i>fig</i> format) used in the Section 5 of [1](#references).
 
 ### Conditions of use 
 
 If you use the software for your research, please cite our paper [[1](#references)] that describes the method.
-Since one of the dataset used is based on the [CASAS](http://ailab.wsu.edu/casas/) datasets, you should also cite the article [[4](#references)].
+Since one of the datasets used is based on the [CASAS](http://ailab.wsu.edu/casas/) datasets, you should also cite the article [[3](#references)].
 
 ### References
 

@@ -1,19 +1,17 @@
 ## Learning Temporal Context for Activity Recognition 
 
-This repository contains algorightms and data that we used for our work on long-term temporal models for activity recognition, which we will present at the ECAI 2016 conference [[1](#references)].
+This repository contains algorithms and data that we used for our work on long-term temporal models for activity recognition, which we will present at the ECAI 2016 conference [[1](#references)].
 With these codes and data, you should be able to reproduce experiments performed on the two datasets described in Section 5 of [1](#references)].
-The software is related to the Frequency Map Enhancement (FreMEn)[2](#references) method and the data are part of the datasets for long-term mobile robot autonomy [3](#references) provided by the Lincoln Centre for Autonomous Systems [LCAS](http://robots.lincoln.ac.uk)
+The software is related to the Frequency Map Enhancement (FreMEn)[2](#references) method and the data are part of the datasets for long-term mobile robot autonomy [DALTEMRA](https://lcas.lincoln.ac.uk/owncloud/shared/datasets) provided by the Lincoln Centre for Autonomous Systems [LCAS](http://robots.lincoln.ac.uk)
 
 ### How to compile and run 
 
 The project uses standard libraries and we provide relevant Makefiles to compile it, so the only think you need to do is to go to the <b>src</b> folder an call `make`.
-
-Go to the <i>fremen/src</i> folder and call <i>make</i> again. This should create a binary in the <i>fremen/bin</i> folder.
 Now, to quickly test the method, call e.g.
 
 `../bin/fremen ../data/aruba/ FN 5 15 0.2|grep Precision`
 
-The arguments are following:
+The arguments in this example are as follows:
 
 1.<b>../data/aruba</b> location of the dataset,
 1.<b>FN</b> selection of the spatio-temporal model. First letter determines temporal model (FreMEn) in this case and `N` means that `None` spatial context is used. See the code <i> main/fremen.cpp</i> for details.
@@ -21,7 +19,7 @@ The arguments are following:
 1.<b>15</b> is the number of days used in the experiment,  
 1.<b>0.2</b> is the filename of the confusion matrix or the value of elements at the matrix diagonal, i.e. we used 0.2 for `weak` and 0.8 for `strong` in the experiments described in [1](reference).
 
-You should get 15 lines that show how the classification perfomed each day.
+You should get 15 lines that show how the classification performed each day.
 Each value contains the day, number of correct and incorrect classifications, classification precision etc.
 
 ### Datasets
@@ -50,9 +48,10 @@ Then, running
 ### Conditions of use 
 
 If you use the software for your research, please cite our paper [[1](#references)] that describes the method.
-Since one of the dataset used is based on the [CASAS](http://ailab.wsu.edu/casas/) datasets, you should also cite the article [[2](#references)].
+Since one of the dataset used is based on the [CASAS](http://ailab.wsu.edu/casas/) datasets, you should also cite the article [[4](#references)].
 
 ### References
 
-1. T.Krajnik, M.Kulich, L.Mudrova, R.Ambrus, T.Duckett: <b>[Where is waldo at time t? using spatio-temporal models for mobile robot search.](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2015_ICRA_search.pdf)</b> In proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2015. [[bibtex](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2015_ICRA_search.bib)]
+1. C.Coppola, T.Krajnik, T.Duckett, N.Bellotto: <b>[](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2016_ECAI.pdf)</b> In proceedings of the European Conference on Artificial Intelligence  (ECAI), 2016. [[bibtex](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2016_ECAI.bib)]
+1. T.Krajnik, J.P.Fentanes, G.Cielniak, C.Dondrup, T.Duckett: <b>[Spectral Analysis for Long-Term Robotic Mapping.](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2014_ICRA.pdf)</b> In proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2014. [[bibtex](http://raw.githubusercontent.com/wiki/gestom/fremen/papers/fremen_2014_ICRA.bib)]
 1. D.J. Cook: <b>[Learning setting-generalized activity models for smart spaces.](http://eecs.wsu.edu/~cook/pubs/is10.pdf)</b> IEEE Intelligent Systems, 2012. [[bibtex](http://dblp.uni-trier.de/rec/bibtex/journals/expert/Cook12)]

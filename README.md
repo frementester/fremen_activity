@@ -16,9 +16,9 @@ Each value contains the day, number of correct and incorrect classifications, cl
 
 The arguments in this example are as follows:
 
-1. <b>../data/aruba</b> location of the dataset,
-1. <b>FN</b> selection of the spatio-temporal model. First letter determines temporal model (FreMEn) in this case and <b>N</b> means that <i>None</i> spatial context is used. See the code <i> main/fremen.cpp</i> for details.
-1. <b>5</b> order of the model - 5 periodics in the aforementioned example,
+1. <b>../data/aruba</b> is the location of the dataset,
+1. <b>FN</b> is selection of the spatio-temporal model. First letter determines temporal model (FreMEn) in this case and <b>N</b> means that <i>None</i> spatial context is used. See the code <i> main/fremen.cpp</i> for details.
+1. <b>5</b> stands for order of the model - 5 periodics in the aforementioned example,
 1. <b>15</b> is the number of days used in the experiment,  
 1. <b>0.2</b> is the filename of the confusion matrix or the value of elements at the matrix diagonal, i.e. we used 0.2 for <i>weak</i> and 0.8 for <i>strong</i> in the experiments described in [1](reference).
 
@@ -27,10 +27,10 @@ The arguments in this example are as follows:
 
 Datasets are located in the `data` folder. Each dataset consists of 5 files 
 
-1. <b>activity.min</b> ID of an activity per minute, (e.g. 1440 lines of that file represent one day).
-1. <b>activity.names</b> name of an activity - provides info which ID is which activity. 
-1. <b>locations.min</b> id of a room, where the person was, (again 1440 lines of that file represent one day).
-1. <b>locations.names</b> room type - provides room types of the rooms in <b>locations.min</b>. 
+1. <b>activity.min</b> contains the timelines of activities per minute, (e.g. 1440 lines of that file represent one day).
+1. <b>activity.names</b> contains names of the activities so you know what are the ID's in the previous file mean. 
+1. <b>locations.min</b> containes IDs of rooms where the person was. Again 1440 lines of that file represent one day.
+1. <b>locations.names</b> provides room types of the rooms' IDs in <b>locations.min</b>. 
 
 ### Benchmark 
 
@@ -41,14 +41,14 @@ This will create a small binary for statistical testing.
 
 Then, running
 
-1. ``./process_dataset.sh aruba``, processes the <i>aruba</i> dataset, see Section 5 of [1](#references).
+1. ``./process_dataset.sh aruba``, processes the <i>aruba</i> dataset, see Section 5 of [[1](#references)].
 1. ``./summarize_results.sh aruba``, performs statistical tests over the <i>aruba</i> dataset results calculated in the previous step and generates <i>aruba.pdf</i>, which provides comparison of the individual temporal models.
 1. ``./process_dataset.sh witham`` and ``./summarize_results.sh witham`` does the same for the <i>witham</i> dataset.
-1. ``./draw_results.sh``, processes the results of both <i>aruba</i> and <i>witham</i> and generates the figures (in <i>fig</i> format) used in the Section 5 of [1](#references).
+1. ``./draw_results.sh``, processes the results of both <i>aruba</i> and <i>witham</i> and generates the figures (in <i>fig</i> format) used in the Section 5 of [[1](#references)].
 
 ### Conditions of use 
 
-If you use the software for your research, please cite our paper [[1](#references)] that describes the method.
+If you use the software for your research, please cite either [[2](#references)] (is you use FreMEn) or [[1](#references)] that describes FreMEn's application to activity recognition..
 Since one of the datasets used is based on the [CASAS](http://ailab.wsu.edu/casas/) datasets, you should also cite the article [[3](#references)].
 
 ### References

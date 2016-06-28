@@ -2,7 +2,7 @@ dataset=$1
 numdays=15
 mkdir ../results/$dataset/
 
-for j in confmat 0.2 0.8 
+for j in confmat %0.2 0.8 
 
 do
 echo Diagonal precision $j
